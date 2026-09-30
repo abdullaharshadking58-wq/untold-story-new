@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>UNTOLD</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- BACKGROUND -->
+    <div class="glow glow-one"></div>
+    <div class="glow glow-two"></div>
+
+    <div class="hearts">
+        <span>♥</span>
+        <span>♥</span>
+        <span>♥</span>
+        <span>♥</span>
+        <span>♥</span>
+        <span>♥</span>
+    </div>
+
+
+    <!-- PASSWORD -->
+    <section class="password-screen" id="passwordScreen">
+
+        <div class="password-card">
+
+            <div class="small-title">A PRIVATE STORY</div>
+
+            <h1>UNTOLD</h1>
+
+            <p>
+                Kuch kahaniyan sab ko nahi batayi jatin...
+                sirf mehsoos ki jati hain.
+            </p>
+
+            <input
+                type="password"
+                id="passwordInput"
+                placeholder="Enter password"
+            >
+
+            <button id="unlockBtn">
+                Enter Story
+            </button>
+
+            <div id="errorMessage"></div>
+
+        </div>
+
+    </section>
+
+
+    <!-- MAIN STORY -->
+    <main id="storyApp" class="hidden">
+
+
+        <!-- PAGE 1 -->
+        <section class="story-page active-page" id="page1">
+
+            <div class="page-number">01 / 08</div>
+
+            <div class="page-content">
+
+                <div class="eyebrow">
+                    SOME STORIES REMAIN
+                </div>
+
+                <h1 class="main-title">
+                    UNTOLD
+                </h1>
+
+                <p class="subtitle">
+                    Ek kahani jo kabhi poori tarah kahi nahi gayi.
+                </p>
+
+                <div class="line"></div>
+
+                <p class="intro-text">
+                    Ye sirf kuch school memories nahi hain.
+                    Ye un lamhon ki kahani hai jo waqt ke saath
+                    guzarte gaye, lekin dil se kabhi nahi guzray.
+                </p>
+
+                <button class="next-btn" onclick="nextPage()">
+                    Begin the story →
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- PAGE 2 -->
+        <section class="story-page" id="page2">
+
+            <div class="page-number">02 / 08</div>
+
+            <div class="page-content">
+
+                <span class="chapter">CHAPTER ONE</span>
+
+                <h2>2019</h2>
+
+                <h3>The Beginning</h3>
+
+                <div class="story-box">
+
+                    <p>
+                        2019 ek bilkul normal sa saal tha.
+                        Humein bilkul nahi pata tha ke ye saal
+                        hamari zindagi ki ek khoobsurat memory
+                        ban jayega.
+                    </p>
+
+                    <p>
+                        School ki routine, friends, hasi mazaak,
+                        classes aur roz ke chhote chhote lamhe...
+                        sab kuch normal tha.
+                    </p>
+
+                    <p>
+                        Kabhi ek hi desk par baithna,
+                        baatein karna aur bina kisi wajah ke
+                        hans dena us waqt itna important nahi lagta tha.
+                    </p>
+
+                    <p class="highlight">
+                        Us waqt humein pata hi nahi tha ke
+                        hum memories bana rahe thay.
+                    </p>
+
+                </div>
+
+                <button class="next-btn" onclick="nextPage()">
+                    Next chapter →
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- PAGE 3 -->
+        <section class="story-page" id="page3">
+
+            <div class="page-number">03 / 08</div>
+
+            <div class="page-content">
+
+                <span class="chapter">CHAPTER TWO</span>
+
+                <h2>The Days We Had</h2>
+
+                <div class="story-box">
+
+                    <p>
+                        2019 se 2022 tak ka waqt shayad sirf
+                        kuch saal tha, lekin un saalon mein
+                        bohat sari memories chhupi hui hain.
+                    </p>
+
+                    <p>
+                        School sirf books aur classes ki wajah
+                        se yaad nahi rehta.
+                        School un logon ki wajah se yaad rehta hai
+                        jo us waqt hamare aas paas hotay hain.
+                    </p>
+
+                    <p>
+                        Woh sitting, woh conversations,
+                        woh hasi mazaak, friends ka shor,
+                        school functions aur woh simple se din...
+                    </p>
+
+                    <p>
+                        Waqt guzarta gaya.
+                        Din weeks ban gaye aur weeks months.
+                        Phir school ke woh din bhi khatam ho gaye.
+                    </p>
+
+                    <p class="highlight">
+                        Humne us waqt sirf din guzare thay...
+                        lekin waqt ne un dinon ko memories bana diya.
+                    </p>
+
+                </div>
+
+                <button class="next-btn" onclick="nextPage()">
+                    Continue →
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- PAGE 4 -->
+        <section class="story-page" id="page4">
+
+            <div class="page-number">04 / 08</div>
+
+            <div class="page-content">
+
+                <span class="chapter">CHAPTER THREE</span>
+
+                <h2>2022</h2>
+
+                <h3>The Last Days</h3>
+
+                <div class="story-box">
+
+                    <p>
+                        2022 mein school ke woh aakhri din aaye
+                        jab humein pata tha ke sab kuch change hone wala hai.
+                    </p>
+
+                    <p>
+                        School khatam hua aur sab apni apni
+                        zindagi mein busy hotay gaye.
+                    </p>
+
+                    <p>
+                        Jo shakhs kabhi roz nazar aata tha,
+                        woh dheere dheere ek memory ban gaya.
+                    </p>
+
+                    <p>
+                        Kabhi dobara milne ki koshish hui,
+                        kabhi baat karne ka dil hua,
+                        lekin zindagi hamesha hamari marzi
+                        ke mutabiq nahi chalti.
+                    </p>
+
+                    <p class="highlight">
+                        Kuch log zindagi se door ho jate hain,
+                        lekin unki memories dil se door nahi hotin.
+                    </p>
+
+                </div>
+
+                <button class="next-btn" onclick="nextPage()">
+                    Next →
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- PAGE 5 -->
+        <section class="story-page" id="page5">
+
+            <div class="page-number">05 / 08</div>
+
+            <div class="page-content">
+
+                <span class="chapter">AFTER SCHOOL</span>
+
+                <h2>Some Things Stayed</h2>
+
+                <div class="story-box">
+
+                    <p>
+                        School ke baad waqt bohat badal gaya,
+                        lekin kuch feelings waise hi reh gayin.
+                    </p>
+
+                    <p>
+                        Phir ek waqt aaya jab TikTok par
+                        dobara conversation hui.
+                    </p>
+
+                    <p>
+                        Purani memories dobara yaad aayin,
+                        purani baatein dobara mehsoos hui,
+                        aur jo feelings waqt ke saath chup ho gayi thin
+                        woh phir se samne aa gayin.
+                    </p>
+
+                    <p>
+                        Baat shuru karne ke liye jo tareeqa use hua,
+                        woh sahi nahi tha.
+                        Us ghalti ko ghalti hi kehna chahiye.
+                    </p>
+
+                    <p>
+                        Lekin uske baad jo feelings thin,
+                        woh fake nahi thin.
+                    </p>
+
+                    <p class="highlight">
+                        Kuch feelings ko explain karna mushkil hota hai.
+                        Bas dil unhein mehsoos karta hai.
+                    </p>
+
+                </div>
+
+                <button class="next-btn" onclick="nextPage()">
+                    Continue →
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- PAGE 6 -->
+        <section class="story-page" id="page6">
+
+            <div class="page-number">06 / 08</div>
+
+            <div class="page-content">
+
+                <span class="chapter">THE TRUTH</span>
+
+                <h2>What Remains</h2>
+
+                <div class="truth-box">
+
+                    <div class="quote-mark">“</div>
+
+                    <p>
+                        Har kahani ka ending waisa nahi hota
+                        jaisa hum sochte hain.
+                    </p>
+
+                    <p>
+                        Kabhi kabhi hum kisi ko dil se chahte hain,
+                        lekin phir bhi uski choice aur uski khushi
+                        ka respect karna padta hai.
+                    </p>
+
+                    <p>
+                        Jo hua, woh hamari story ka hissa tha.
+                        Jo nahi hua, usay Allah ki raza samajhna
+                        bhi zaroori hai.
+                    </p>
+
+                    <p class="highlight">
+                        Kuch log hamare saath nahi rehte,
+                        lekin unki yaadein hamesha hamare saath rehti hain.
+                    </p>
+
+                </div>
+
+                <button class="next-btn" onclick="nextPage()">
+                    Read the letter →
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- PAGE 7 -->
+        <section class="story-page" id="page7">
+
+            <div class="page-number">07 / 08</div>
+
+            <div class="page-content">
+
+                <span class="chapter">A LETTER</span>
+
+                <h2>For The Person Behind The Memories</h2>
+
+                <div class="letter">
+
+                    <p>
+                        Shayad ye sab kehna zaroori nahi tha,
+                        lekin kuch baatein dil mein reh jati hain.
+                    </p>
+
+                    <p>
+                        Main bas itna chahta hoon ke tum hamesha khush raho.
+                        Zindagi tumhein woh sab de jo tum deserve karti ho.
+                    </p>
+
+                    <p>
+                        Jo memories humne saath banayin,
+                        woh meri life ka ek khoobsurat hissa rahengi.
+                    </p>
+
+                    <p>
+                        Main kisi cheez ko force nahi karna chahta.
+                        Har insaan ki apni choice aur apni zindagi hoti hai.
+                    </p>
+
+                    <p>
+                        Bas itna kehna hai...
+                    </p>
+
+                    <p class="letter-final">
+                        Thank you for being a part of those beautiful days.
+                    </p>
+
+                </div>
+
+                <button class="next-btn" onclick="nextPage()">
+                    One last page →
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- PAGE 8 -->
+        <section class="story-page final-page" id="page8">
+
+            <div class="page-number">08 / 08</div>
+
+            <div class="page-content">
+
+                <span class="chapter">THE END</span>
+
+                <h2>Some Stories Stay</h2>
+
+                <p class="final-text">
+                    Kuch kahaniyan khatam nahi hotin...
+                    bas waqt ke saath khamosh ho jati hain.
+                </p>
+
+                <div class="poetry">
+
+                    جانے والے، تیری یادوں کا سفر باقی ہے،<br>
+                    تو نہیں پاس، مگر دل میں اثر باقی ہے۔<br><br>
+
+                    ہم نے چاہا تھا تجھے، یہ ہماری قسمت تھی،<br>
+                    اب جو رب کی رضا ہے، وہی ہماری قسمت ہے۔ 🤍
+
+                </div>
+
+                <div class="final-line">
+                    UNTOLD — A STORY THAT REMAINED.
+                </div>
+
+                <button class="restart-btn" onclick="restartStory()">
+                    Read Again
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- NAVIGATION -->
+        <div class="story-navigation">
+
+            <button onclick="previousPage()" id="prevBtn">
+                ←
+            </button>
+
+            <div class="dots">
+
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+
+            </div>
+
+            <button onclick="nextPage()" id="nextBtn">
+                →
+            </button>
+
+        </div>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

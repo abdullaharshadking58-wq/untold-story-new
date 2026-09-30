@@ -1,0 +1,554 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    background: #07070a;
+    color: #f5eef0;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow: hidden;
+}
+
+
+/* BACKGROUND */
+
+.glow {
+    position: fixed;
+    width: 420px;
+    height: 420px;
+    border-radius: 50%;
+    filter: blur(110px);
+    opacity: .13;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.glow-one {
+    background: #c92f58;
+    top: -150px;
+    left: -100px;
+}
+
+.glow-two {
+    background: #76233d;
+    bottom: -180px;
+    right: -100px;
+}
+
+
+/* HEARTS */
+
+.hearts {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.hearts span {
+    position: absolute;
+    bottom: -50px;
+    color: rgba(218, 51, 89, .22);
+    font-size: 22px;
+    animation: heartMove 12s linear infinite;
+}
+
+.hearts span:nth-child(1) {
+    left: 10%;
+    animation-delay: 1s;
+}
+
+.hearts span:nth-child(2) {
+    left: 25%;
+    animation-delay: 5s;
+}
+
+.hearts span:nth-child(3) {
+    left: 42%;
+    animation-delay: 2s;
+}
+
+.hearts span:nth-child(4) {
+    left: 60%;
+    animation-delay: 7s;
+}
+
+.hearts span:nth-child(5) {
+    left: 78%;
+    animation-delay: 4s;
+}
+
+.hearts span:nth-child(6) {
+    left: 90%;
+    animation-delay: 9s;
+}
+
+@keyframes heartMove {
+
+    0% {
+        transform: translateY(0) scale(.8);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-110vh) rotate(25deg);
+        opacity: 0;
+    }
+}
+
+
+/* PASSWORD */
+
+.password-screen {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    z-index: 20;
+    background:
+        radial-gradient(circle at center,
+        rgba(125, 28, 53, .25),
+        #07070a 65%);
+}
+
+.password-card {
+    width: min(440px, 100%);
+    padding: 55px 35px;
+    text-align: center;
+    border: 1px solid rgba(255,255,255,.09);
+    border-radius: 28px;
+    background: rgba(17,17,21,.82);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 30px 100px rgba(0,0,0,.65);
+}
+
+.small-title {
+    font-size: 11px;
+    letter-spacing: 4px;
+    color: #bda8ad;
+    margin-bottom: 15px;
+}
+
+.password-card h1 {
+    font-size: 58px;
+    letter-spacing: 8px;
+    margin-bottom: 18px;
+}
+
+.password-card p {
+    color: #a99da1;
+    line-height: 1.8;
+    margin-bottom: 28px;
+}
+
+.password-card input {
+    width: 100%;
+    padding: 16px 18px;
+    border: 1px solid rgba(255,255,255,.1);
+    border-radius: 14px;
+    background: #0c0c10;
+    color: white;
+    outline: none;
+    margin-bottom: 14px;
+}
+
+.password-card button {
+    width: 100%;
+    padding: 16px;
+    border: 0;
+    border-radius: 14px;
+    background: #a9284e;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+#errorMessage {
+    color: #ff7b9d;
+    font-size: 13px;
+    margin-top: 12px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+
+/* STORY */
+
+#storyApp {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    height: 100vh;
+}
+
+
+/* PAGES */
+
+.story-page {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 7% 110px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(40px);
+    transition:
+        opacity .6s ease,
+        transform .6s ease,
+        visibility .6s;
+}
+
+.story-page.active-page {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+
+.page-content {
+    width: min(900px, 100%);
+    text-align: center;
+}
+
+.page-number {
+    position: absolute;
+    top: 30px;
+    right: 45px;
+    color: #776b70;
+    font-size: 12px;
+    letter-spacing: 3px;
+}
+
+.eyebrow,
+.chapter {
+    color: #c25a77;
+    font-size: 11px;
+    letter-spacing: 5px;
+    font-weight: bold;
+}
+
+.main-title {
+    font-size: clamp(65px, 12vw, 150px);
+    letter-spacing: 15px;
+    margin: 18px 0;
+    background: linear-gradient(
+        135deg,
+        #fff,
+        #d48a9f
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.subtitle {
+    color: #c8bfc3;
+    font-size: 18px;
+}
+
+.line {
+    width: 80px;
+    height: 1px;
+    background: #a82d51;
+    margin: 35px auto;
+}
+
+.intro-text {
+    max-width: 650px;
+    margin: auto;
+    color: #9e9499;
+    line-height: 2;
+    font-size: 16px;
+}
+
+
+/* HEADINGS */
+
+.page-content h2 {
+    font-size: clamp(42px, 7vw, 78px);
+    margin: 18px 0 5px;
+    letter-spacing: -2px;
+}
+
+.page-content h3 {
+    color: #a9979e;
+    font-weight: normal;
+    margin-bottom: 30px;
+}
+
+
+/* STORY BOX */
+
+.story-box,
+.truth-box,
+.letter {
+    width: min(760px, 100%);
+    margin: 25px auto;
+    padding: 35px;
+    border: 1px solid rgba(255,255,255,.07);
+    border-radius: 24px;
+    background: rgba(17,17,21,.72);
+    backdrop-filter: blur(18px);
+    box-shadow: 0 25px 70px rgba(0,0,0,.35);
+    text-align: left;
+}
+
+.story-box p,
+.truth-box p,
+.letter p {
+    color: #b5aeb2;
+    line-height: 1.9;
+    font-size: 15px;
+    margin-bottom: 18px;
+}
+
+.highlight {
+    color: #dfc3cb !important;
+    border-left: 2px solid #a92e52;
+    padding-left: 16px;
+}
+
+
+/* TRUTH */
+
+.quote-mark {
+    font-size: 80px;
+    line-height: .5;
+    color: #a52d50;
+    margin-bottom: 25px;
+}
+
+
+/* LETTER */
+
+.letter {
+    background: linear-gradient(
+        145deg,
+        rgba(35,25,29,.9),
+        rgba(14,14,18,.9)
+    );
+}
+
+.letter-final {
+    color: #e1c5cd !important;
+    font-size: 17px !important;
+}
+
+
+/* FINAL */
+
+.final-page {
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(110,24,47,.12),
+            transparent 55%
+        );
+}
+
+.final-text {
+    max-width: 600px;
+    margin: 25px auto;
+    color: #aaa0a5;
+    line-height: 2;
+}
+
+.poetry {
+    margin: 35px auto;
+    color: #e5cfd5;
+    font-family:
+        "Noto Nastaliq Urdu",
+        "Noto Sans Arabic",
+        serif;
+    font-size: 25px;
+    line-height: 2.4;
+    direction: rtl;
+    text-align: center;
+}
+
+.final-line {
+    color: #6f6469;
+    font-size: 10px;
+    letter-spacing: 5px;
+    margin-top: 35px;
+}
+
+
+/* BUTTONS */
+
+.next-btn,
+.restart-btn {
+    border: 1px solid rgba(255,255,255,.12);
+    background: rgba(255,255,255,.04);
+    color: #eee;
+    padding: 14px 24px;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: .3s;
+}
+
+.next-btn:hover,
+.restart-btn:hover {
+    background: #a72d50;
+    border-color: #a72d50;
+    transform: translateY(-2px);
+}
+
+
+/* NAVIGATION */
+
+.story-navigation {
+    position: fixed;
+    bottom: 28px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.story-navigation button {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,.12);
+    background: rgba(15,15,19,.8);
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.dots {
+    display: flex;
+    gap: 7px;
+}
+
+.dot {
+    width: 6px;
+    height: 6px;
+    background: #4a4448;
+    border-radius: 50%;
+    transition: .3s;
+}
+
+.dot.active {
+    width: 22px;
+    border-radius: 10px;
+    background: #b5365b;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    body {
+        overflow: hidden;
+    }
+
+    .story-page {
+        padding:
+            65px
+            20px
+            95px;
+        align-items: flex-start;
+        overflow-y: auto;
+    }
+
+    .page-content {
+        padding-top: 20px;
+    }
+
+    .page-number {
+        top: 20px;
+        right: 20px;
+        font-size: 9px;
+    }
+
+    .main-title {
+        font-size: 62px;
+        letter-spacing: 8px;
+    }
+
+    .subtitle {
+        font-size: 15px;
+    }
+
+    .intro-text {
+        font-size: 14px;
+        line-height: 1.9;
+    }
+
+    .page-content h2 {
+        font-size: 42px;
+    }
+
+    .story-box,
+    .truth-box,
+    .letter {
+        padding: 24px 20px;
+        border-radius: 20px;
+    }
+
+    .story-box p,
+    .truth-box p,
+    .letter p {
+        font-size: 14px;
+        line-height: 1.85;
+    }
+
+    .poetry {
+        font-size: 19px;
+        line-height: 2.5;
+    }
+
+    .story-navigation {
+        bottom: 16px;
+        gap: 14px;
+    }
+
+    .story-navigation button {
+        width: 40px;
+        height: 40px;
+    }
+
+    .password-card {
+        padding: 40px 24px;
+    }
+
+    .password-card h1 {
+        font-size: 48px;
+    }
+
+    .dots {
+        gap: 5px;
+    }
+
+    .dot {
+        width: 5px;
+        height: 5px;
+    }
+
+    .dot.active {
+        width: 17px;
+    }
+}
